@@ -1,0 +1,35 @@
+---
+interface Props {
+	title: string;
+	numeration: string;
+	// href: string;
+}
+const {  title ,numeration  } = Astro.props;
+
+---
+<script>
+    const btnInfoCard = document.querySelectorAll(".btn-info-card");
+    btnInfoCard?.forEach((button) => {
+        button.addEventListener('click', () => {
+            const containerIfo = document.getElementById("containerInfo");
+            const viewCard = document.getElementById("info-services");
+            containerIfo?.classList.toggle('hidden');
+            viewCard?.classList.toggle('hidden');
+        });
+    });
+
+
+    
+</script>
+<div>
+    <div class="w-full h-1 bg-black"></div>
+    <div class="text-black flex">
+        <span class="text-2xl mr-5 decoration-clone">{numeration}/</span>
+        <p class="text-6xl">{title}</p>		        
+    </div>
+    <div class="text-right mt-16 mr-50">        
+        <button  class="btn-info-card bg-state-blue rounded-full size-11 hover:bg-white">
+            <img class="size-10" src="./flecha.png"  alt="">
+        </button>                    
+    </div>    
+</div>
